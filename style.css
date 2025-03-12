@@ -77,7 +77,14 @@ body {
     color: #f22626; /* 鼠标悬停时文字颜色变深 */
 }
 
+.icons {
+    margin-top: auto
+}
 
+.icons img {
+    width: 24px;
+    margin-right: 10px;
+}
 
 .background {
     position: absolute;
