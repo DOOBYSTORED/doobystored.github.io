@@ -8,6 +8,9 @@
 
 
 body {
+    background-image: url('images/redcat.png');
+    background-size: cover;
+    background-position: center;
     font-family: Arial, sans-serif;
     display: flex;
     height: 100vh;
@@ -36,7 +39,7 @@ body {
 }
 
 .sidebar h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: bold;
     font-family: 'Lato', sans-serif
 }
@@ -61,13 +64,17 @@ body {
     font-size: 1.2rem;
 }
 
-.icons {
-    margin-top: auto
+/* 子页面样式 */
+.sidebar nav ul li:nth-child(2) a, /* Festival Dobby! */
+.sidebar nav ul li:nth-child(3) a { /* Dining with Dobby */
+    margin-left: 20px; /* 句首缩进 */
+    font-style: italic;
+    font-size: 0.9rem !important; /* 字体更小 */
+    color: #403e3e !important; /* 子页面文字颜色 */
 }
 
-.icons img {
-    width: 24px;
-    margin-right: 10px;
+.sidebar nav ul li a:hover {
+    color: #f22626; /* 鼠标悬停时文字颜色变深 */
 }
 
 

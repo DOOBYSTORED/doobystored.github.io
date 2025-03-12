@@ -11,7 +11,9 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     height: 100vh;
-    background-color: #fbe3ea;
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Ensure body takes at least the full viewport height */
+    background-color: #fbf2e3;
     margin: 0;
     overflow-y: auto
 }
@@ -36,7 +38,7 @@ body {
 }
 
 .sidebar h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: bold;
     font-family: 'Lato', sans-serif
 }
@@ -61,6 +63,20 @@ body {
     font-size: 1.2rem;
 }
 
+/* 子页面样式 */
+/* 子页面样式 */
+.sidebar nav ul li:nth-child(2) a, /* Festival Dobby! */
+.sidebar nav ul li:nth-child(3) a { /* Dining with Dobby */
+    margin-left: 20px; /* 句首缩进 */
+    font-style: italic;
+    font-size: 0.9rem !important; /* 字体更小 */
+    color: #403e3e !important; /* 子页面文字颜色 */
+}
+
+.sidebar nav ul li a:hover {
+    color: #f28526; /* 鼠标悬停时文字颜色变深 */
+}
+
 .icons {
     margin-top: auto
 }
@@ -83,18 +99,28 @@ body {
 
 
 
-.main-content {
-    margin-left: 270px; /* 避开 Sidebar */
-    padding: 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 两列，每列宽度相等 */
-    gap: 10px; /* 图片之间的间隙 */
-    max-width: 800px; /* 限制容器最大宽度 */
-    margin: 0 auto; /* 水平居中 */
+
+
+
+
+
+.content {
+    margin-left: 25%; /* Adjust this value based on the width of the sidebar */
+    padding: 20px;
 }
 
-/* 标题样式 */
+.title-container {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds space between title and subtitle */
+    margin-bottom: 20px;
+    margin-top:50px
+}
+
 .title {
+    display: block;
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -104,21 +130,57 @@ body {
 .subtitle {
     font-style: italic;
     color: #555;
-    margin-bottom: 30px;
 }
 
-/* 图片展示区域 */
 
+.main-content {
+    width: 100%;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 两列，每列宽度相等 */
+    gap: 50px; /* 图片之间的间隙 */
+    max-width: 900px; /* 限制容器最大宽度 */
+    margin: 0 auto; /* 水平居中 */
+}
+
+.image-container {
+    display: contents; /* Allow grid to handle layout */
+}
 
 .photo {
-    position: relative;
-    overflow: hidden;
+    text-align: center;
+    aspect-ratio: 1 / 1;
 }
 
 .photo img {
-    float: left; /* 图片向左浮动 */
-    width: 48%; /* 每张图片占容器的48%，留出2%的间隙 */
-    height: auto; /* 保持图片比例 */
-    margin-right: 2%
+    width: 100%; /* Make images fill their container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
 
+.caption {
+    margin-top: 10px; /* Space between image and caption */
+    font-style: italic;
+    color: #777;
+}
+
+.image-container2 {
+    display: contents; /* Allow grid to handle layout */
+}
+
+.photo {
+    text-align: center;
+    aspect-ratio: 1 / 1;
+}
+
+.photo img {
+    width: 100%; /* Make images fill their container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+.caption {
+    margin-top: 10px; /* Space between image and caption */
+    font-style: italic;
+    color: #777;
 }
